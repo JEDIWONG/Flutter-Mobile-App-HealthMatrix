@@ -34,12 +34,12 @@ class _AppLayoutState extends State<AppLayout> {
         backgroundColor: const Color.fromARGB(255, 255, 255, 255),
         items: const [
           BottomNavigationBarItem(
-            icon: Icon(Icons.home),
+            icon: Icon(Icons.dashboard_sharp),
             label: 'Home',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.shop),
-            label: "Saved",
+            label: "",
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.task_alt),
@@ -47,7 +47,7 @@ class _AppLayoutState extends State<AppLayout> {
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.account_circle),
-            label: "Account"
+            label: "Me"
           ),
         ],
       ),
