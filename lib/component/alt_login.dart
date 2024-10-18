@@ -24,7 +24,6 @@ class AltLogin extends StatelessWidget{
           
           AltLoginButton(title: "Sign in With Google", imgUrl: "assets/icons/google.png"),
           Padding(padding: EdgeInsets.all(10)),
-          AltLoginButton(title: "Sign in With Microsoft", imgUrl: "assets/icons/google.png"),
         ],
       ),
     );

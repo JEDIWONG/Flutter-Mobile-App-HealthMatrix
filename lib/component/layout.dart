@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:health_matrix/screen/home.dart';
+import 'package:health_matrix/screen/profile.dart';
 
 class AppLayout extends StatefulWidget {
   const AppLayout({super.key});
@@ -12,6 +13,10 @@ class _AppLayoutState extends State<AppLayout> {
 
   static List<Widget> pageList = [
     const Home(),
+    const Home(),
+    const Home(),
+    const Home(),
+    const Profile(),
   ];
 
   void _switchPage(int index) {
@@ -24,30 +29,34 @@ class _AppLayoutState extends State<AppLayout> {
   Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomInset: true,
-        
-  
+      
       body: pageList.elementAt(_selectedIndex),
+
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _selectedIndex,
-        onTap: _switchPage, // Call the function to switch pages
-        selectedItemColor: const Color.fromARGB(255, 255, 183, 0),
+        onTap: _switchPage, 
+        selectedItemColor: Colors.amber,
         unselectedItemColor: Colors.black,
-        backgroundColor: Colors.white,
+      
         items: const [
           BottomNavigationBarItem(
-            icon: Icon(Icons.home),
+            icon: Icon(Icons.dashboard_rounded),
             label: 'Dashboard',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.shop),
-            label: "",
+            icon: Icon(Icons.monitor_heart_rounded),
+            label: "Health Track",
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.notifications),
-            label: 'Notification',
+            icon: Icon(Icons.medical_services_rounded),
+            label: 'Medical Centre',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.account_circle),
+            icon: Icon(Icons.book_rounded),
+            label: "Information"
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.account_circle_rounded),
             label: "Profile"
           ),
         ],

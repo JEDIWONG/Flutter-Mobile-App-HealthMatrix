@@ -19,7 +19,7 @@ class TextTittleLeft extends StatelessWidget{
             alignment: Alignment.centerLeft,
             child : Padding(
               padding:  const EdgeInsets.fromLTRB(20, 0, 0, 0),
-              child: Text(title,style : CustomStyle.largeHeading,),
+              child: Text(title,style : CustomStyle.mediumHeading,),
             ),
           ),
           

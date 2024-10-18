@@ -9,25 +9,22 @@ class PageBanner extends StatelessWidget{
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
+    return Container(
       width: MediaQuery.sizeOf(context).width,
       height: 200,
       
-      child: Stack(
-        children: [
-          Opacity(
-            opacity: 0.5,
-            child: Image.asset(imgUrl,height: 200,),
-          ),
-          
-          Align(
-            alignment: Alignment.bottomCenter,
-            child: Text(title,style: CustomStyle.pageTitle,),
-          )
-          
-        ],
+      decoration: BoxDecoration(
+        image: DecorationImage(
+          image: AssetImage(imgUrl),
+          fit: BoxFit.cover,
+          repeat: ImageRepeat.noRepeat
+        )
       ),
+
+      child: Align(
+            alignment: Alignment.bottomCenter,
+            child: Text(title,style: CustomStyle.bannerTitle,),
+          ),
     );
   }
-  
 }

@@ -29,7 +29,35 @@ class RoundButton extends StatelessWidget{
   }
 }
 
+class CustomBackButton extends StatelessWidget{
+  const CustomBackButton({super.key});
 
+  @override
+  Widget build(BuildContext context) {
+    return Align(
+      alignment: Alignment.centerLeft,
+      child: ElevatedButton(
+        onPressed: (){Navigator.pop(context);},
+        style: ElevatedButton.styleFrom(
+          backgroundColor: Colors.amber,
+          foregroundColor: Colors.white,
+          fixedSize: const Size(100, 30),
+          padding: const EdgeInsets.all(10),
+        ),
+        child: const Wrap(
+          direction: Axis.horizontal,
+          children: [
+            Icon(
+              Icons.navigate_before,
+            ),
+            Text("Back"),
+          ],
+        )
+      ),
+    );
+  }
+  
+}
 
 class AltLoginButton extends StatelessWidget{
 
