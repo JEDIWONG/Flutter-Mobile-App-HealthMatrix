@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:health_matrix/screen/home.dart';
+import 'package:health_matrix/screen/info.dart';
 import 'package:health_matrix/screen/profile.dart';
 
 class AppLayout extends StatefulWidget {
@@ -15,7 +16,7 @@ class _AppLayoutState extends State<AppLayout> {
     const Home(),
     const Home(),
     const Home(),
-    const Home(),
+    const Info(),
     const Profile(),
   ];
 
