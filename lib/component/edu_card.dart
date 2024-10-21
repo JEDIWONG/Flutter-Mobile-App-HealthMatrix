@@ -35,7 +35,15 @@ class EduCard extends StatelessWidget{
         ),
         child: Align(
           alignment: Alignment.bottomRight,
-          child: Text(title,style:const TextStyle(fontSize: 16,fontWeight: FontWeight.bold,color: Colors.amber),),
+          child: Padding(
+            padding: const EdgeInsets.symmetric(vertical: 5,horizontal: 10),
+            
+            child: Text(
+              title,
+              style:const TextStyle(fontSize: 18,fontWeight: FontWeight.bold,color: Colors.white,backgroundColor: Color.fromARGB(255, 218, 164, 0)),
+
+            ),
+        )
         ),
       ),
     );

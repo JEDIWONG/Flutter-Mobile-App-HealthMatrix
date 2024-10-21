@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:health_matrix/component/task_card.dart';
 
 class Home extends StatelessWidget{
   const Home({super.key});
@@ -9,7 +10,7 @@ class Home extends StatelessWidget{
     return const Scaffold(
       body: Column(
         children: [
-          Text(""),
+          TaskCard()
         ],
       ),
     );

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:health_matrix/component/banner.dart';
 import 'package:health_matrix/component/edu_card.dart';
 import 'package:health_matrix/screen/guide.dart';
 import 'package:health_matrix/screen/learning.dart';
@@ -9,28 +10,43 @@ class Info extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.black,
       body: SingleChildScrollView(
-        
         child: Column(
           children: [
-            SizedBox(
+            const PageBanner(imgUrl: "assets/images/info_page/bg.png", title: "Education"),
+            Container(
               width: MediaQuery.sizeOf(context).width,
-              height: 400,
+              height: 500,
+              margin: const EdgeInsets.only(top: 10),
+              padding: const EdgeInsets.symmetric(vertical: 10,horizontal: 10),
+              decoration: const BoxDecoration(
+                borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
+                color: Colors.white,
+                boxShadow: [
+                  BoxShadow(
+                    blurRadius: 1,
+                    blurStyle: BlurStyle.normal,
+                    offset: Offset(1, -1),
+                    color: Color.fromARGB(255, 181, 181, 181),
+                  )
+                ]
+              ),
               child: GridView(
-                padding: const EdgeInsets.all(10),
+                physics: const NeverScrollableScrollPhysics(),
                 scrollDirection: Axis.vertical,
                 gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: 2,
                   childAspectRatio: 1/1,
-                  mainAxisSpacing: 10,
+                  mainAxisSpacing: 20,
                   crossAxisSpacing: 10,
                 ),
 
                 children: const [
-                  EduCard(title: "Learn Now", imgUrl: "assets/images/test_image.jpg",onPressed: Learning(),),
-                  EduCard(title: "Learn Now", imgUrl: "assets/images/test_image.jpg",onPressed: Learning(),),
-                  EduCard(title: "Learn Now", imgUrl: "assets/images/test_image.jpg",onPressed: Learning(),),
-                  EduCard(title: "Learn Now", imgUrl: "assets/images/test_image.jpg",onPressed: Learning(),),
+                  EduCard(title: "Meals Planning", imgUrl: "assets/images/info_page/meal.png",onPressed: Learning(),),
+                  EduCard(title: "Exercise", imgUrl: "assets/images/info_page/exercise.png",onPressed: Learning(),),
+                  EduCard(title: "Knowledge", imgUrl: "assets/images/info_page/knowledge.png",onPressed: Learning(),),
+                  EduCard(title: "Data & Statistic", imgUrl: "assets/images/info_page/stats.png",onPressed: Learning(),),
 
                 ],
               ),
