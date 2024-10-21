@@ -61,7 +61,7 @@ class Onboarding extends StatelessWidget{
                     Text("Everything Else Follows,",style:CustomStyle.onboardingTextSmall,),
                     const Padding(
                       padding: EdgeInsets.only(top: 20),
-                      child: RoundButton(title: "Get Started", onPressed: Auth(), bgColor: Colors.deepPurpleAccent, frColor: Colors.white),
+                      child: RoundButton(title: "Get Started", onPressed: Auth(), bgColor: Color.fromARGB(255,86, 91, 141), frColor: Colors.white),
                     )
 
                   ],
