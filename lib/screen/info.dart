@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:health_matrix/component/edu_card.dart';
 import 'package:health_matrix/screen/guide.dart';
+import 'package:health_matrix/screen/learning.dart';
 
 class Info extends StatelessWidget{
   const Info({super.key});
@@ -26,10 +27,10 @@ class Info extends StatelessWidget{
                 ),
 
                 children: const [
-                  EduCard(title: "Learn Now", imgUrl: "assets/images/test_image.jpg"),
-                  EduCard(title: "Learn Now", imgUrl: "assets/images/test_image.jpg"),
-                  EduCard(title: "Learn Now", imgUrl: "assets/images/test_image.jpg"),
-                  EduCard(title: "Learn Now", imgUrl: "assets/images/test_image.jpg"),
+                  EduCard(title: "Learn Now", imgUrl: "assets/images/test_image.jpg",onPressed: Learning(),),
+                  EduCard(title: "Learn Now", imgUrl: "assets/images/test_image.jpg",onPressed: Learning(),),
+                  EduCard(title: "Learn Now", imgUrl: "assets/images/test_image.jpg",onPressed: Learning(),),
+                  EduCard(title: "Learn Now", imgUrl: "assets/images/test_image.jpg",onPressed: Learning(),),
 
                 ],
               ),
@@ -68,10 +69,10 @@ class Info extends StatelessWidget{
                       ),
 
                       children: const [
-                        EduCard(title: "Learn Now", imgUrl: "assets/images/test_image.jpg"),
-                        EduCard(title: "Learn Now", imgUrl: "assets/images/test_image.jpg"),
-                        EduCard(title: "Learn Now", imgUrl: "assets/images/test_image.jpg"),
-                        EduCard(title: "Learn Now", imgUrl: "assets/images/test_image.jpg"),
+                        EduCard(title: "Learn Now", imgUrl: "assets/images/test_image.jpg",onPressed: Guide(),),
+                        EduCard(title: "Learn Now", imgUrl: "assets/images/test_image.jpg",onPressed: Guide(),),
+                        EduCard(title: "Learn Now", imgUrl: "assets/images/test_image.jpg",onPressed: Guide(),),
+                        EduCard(title: "Learn Now", imgUrl: "assets/images/test_image.jpg",onPressed: Guide(),),
 
                       ],
                     ),

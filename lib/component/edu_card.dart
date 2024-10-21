@@ -1,20 +1,21 @@
 import 'package:flutter/material.dart';
-import 'package:health_matrix/screen/guide.dart';
 
 class EduCard extends StatelessWidget{
   const EduCard({
     super.key,
     required this.title,
     required this.imgUrl,
+    required this.onPressed,
   });
 
   final String title;
   final String imgUrl;
+  final Widget onPressed;
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: (){Navigator.push(context, MaterialPageRoute(builder: (context)=>Guide()));}, 
+      onTap: (){Navigator.push(context, MaterialPageRoute(builder: (context)=>onPressed));}, 
       child: Container(
         decoration:  BoxDecoration(
           borderRadius: const BorderRadius.all(Radius.circular(10)),

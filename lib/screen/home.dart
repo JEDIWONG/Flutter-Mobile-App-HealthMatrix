@@ -9,7 +9,7 @@ class Home extends StatelessWidget{
     return const Scaffold(
       body: Column(
         children: [
-          Text("Wlao"),
+          Text(""),
         ],
       ),
     );
