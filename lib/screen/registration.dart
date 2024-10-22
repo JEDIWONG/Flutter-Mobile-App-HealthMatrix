@@ -6,7 +6,7 @@ import 'package:health_matrix/screen/first_time_setup.dart';
 
 class Registration extends StatelessWidget {
   const Registration({super.key});
-  
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -16,7 +16,7 @@ class Registration extends StatelessWidget {
           decoration: const BoxDecoration(
             image: DecorationImage(
               image: AssetImage("assets/images/onboarding_last.jpg"),
-              alignment: Alignment.topCenter,
+              fit: BoxFit.cover,
             ),
           ),
           child: Container(
