@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:health_matrix/component/list_item.dart';
+import 'package:health_matrix/screen/auth.dart';
 
 class Profile extends StatelessWidget{
   const Profile({super.key});
@@ -52,7 +53,7 @@ class Profile extends StatelessWidget{
             ),
           ),
           Container(
-            margin: EdgeInsets.fromLTRB(0,0,0,30),
+            margin: const EdgeInsets.fromLTRB(0,0,0,30),
             padding: const EdgeInsets.symmetric(horizontal:10),
             child: const Column(
               children: [
@@ -62,7 +63,7 @@ class Profile extends StatelessWidget{
             ),
           ),
           OutlinedButton(
-            onPressed: (){},
+            onPressed: (){Navigator.push(context, MaterialPageRoute(builder: (context)=>const Auth()));},
             style: OutlinedButton.styleFrom(
               backgroundColor: Colors.white,
               foregroundColor: Colors.red,

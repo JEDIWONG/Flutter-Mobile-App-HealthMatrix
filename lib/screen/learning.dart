@@ -13,14 +13,14 @@ class Learning extends StatelessWidget{
       body:SingleChildScrollView(
         child: Column(
           children: [
-            PageBanner(imgUrl: "assets/images/bg_01.jpg", title: "Knowledge"),
+            PageBanner(imgUrl: "assets/images/test_image.jpg", title: "Knowledge"),
             TextTittleLeft(title: "Learning Modules", desc: "Knowledges starts here"),
-            LearningTile(step: "1", title: "Introduction To NCDs", imgUrl: "assets/images/bg_01.jpg"),
-            LearningTile(step: "2", title: "Introduction To NCDs", imgUrl: "assets/images/bg_01.jpg"),
-            LearningTile(step: "3", title: "Introduction To NCDs", imgUrl: "assets/images/bg_01.jpg"),
-            LearningTile(step: "1", title: "Introduction To NCDs", imgUrl: "assets/images/bg_01.jpg"),
-            LearningTile(step: "2", title: "Introduction To NCDs", imgUrl: "assets/images/bg_01.jpg"),
-            LearningTile(step: "3", title: "Introduction To NCDs", imgUrl: "assets/images/bg_01.jpg"),
+            LearningTile(step: "1", title: "Introduction To NCDs", imgUrl: "assets/images/test_image.jpg"),
+            LearningTile(step: "2", title: "Introduction To NCDs", imgUrl: "assets/images/test_image.jpg"),
+            LearningTile(step: "3", title: "Introduction To NCDs", imgUrl: "assets/images/test_image.jpg"),
+            LearningTile(step: "1", title: "Introduction To NCDs", imgUrl: "assets/images/test_image.jpg"),
+            LearningTile(step: "2", title: "Introduction To NCDs", imgUrl: "assets/images/test_image.jpg"),
+            LearningTile(step: "3", title: "Introduction To NCDs", imgUrl: "assets/images/test_image.jpg"),
           ],
         ),
       ) 

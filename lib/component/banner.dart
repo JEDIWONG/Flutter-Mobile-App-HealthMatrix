@@ -11,6 +11,7 @@ class PageBanner extends StatelessWidget{
   Widget build(BuildContext context) {
     return Container(
       width: MediaQuery.sizeOf(context).width,
+      margin: const EdgeInsets.only(bottom: 10),
       height: 200,
       
       decoration: BoxDecoration(
