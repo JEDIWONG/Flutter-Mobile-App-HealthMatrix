@@ -1,6 +1,4 @@
 import "package:flutter/material.dart";
-import "package:health_matrix/component/metric_bar.dart";
-import "package:health_matrix/component/metric_tag.dart";
 import "package:percent_indicator/circular_percent_indicator.dart";
 
 class HealthMonitor extends StatelessWidget{
@@ -9,55 +7,46 @@ class HealthMonitor extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: MediaQuery.sizeOf(context).width,
-      margin: const EdgeInsets.fromLTRB(3,10,3,0),
-      padding: const EdgeInsets.fromLTRB(0,30,0,30),
+      padding: const EdgeInsets.symmetric(vertical: 30),
       decoration: const BoxDecoration(
-        borderRadius: BorderRadius.all(Radius.circular(20)),
-        image: DecorationImage(
-          image: AssetImage("assets/images/dashboard/monitor.png"),
-          fit: BoxFit.cover
-        )
+        color: Color.fromARGB(255, 26, 26, 26),
+        boxShadow: [
+          BoxShadow(
+            blurRadius: 3,
+            blurStyle: BlurStyle.normal,
+            color: Colors.amber,
+            offset: Offset(1, 3),
+          )
+        ]
       ),
-      child:  Row(
+      child: Column(
         children: [
-          const Column(
-            children: [
-              Align(
-                alignment: Alignment.topLeft,
-                child: Column(
+          
+          const ListTile(
+            leading: Icon(Icons.monitor_heart_rounded,color: Colors.lightGreen,),
+            title:Text("Status",style: TextStyle(color: Colors.lightGreen,fontWeight: FontWeight.bold,fontSize: 24),),
+          ),
+          Container(
+            margin: const EdgeInsets.only(left: 30),
+            child:  CircularPercentIndicator(
+              startAngle: 220,
+              radius: 60.0,
+              lineWidth: 5.0,
+              percent: 0.8,
+              center:Container(
+                margin: const EdgeInsets.only(top: 30),
+                child:  const Column(
                   children: [
-                    MetricTag(title: "Exercise",normal: true,),
-                    MetricTag(title: "Hydration",normal: true,),
-                    MetricTag(title: "Blood Pressure",normal: true,),
-                    
+                    Text("80 %",style:  TextStyle(color: Colors.amber,fontSize: 22),),
+                    Text("Overall",style: TextStyle(color: Colors.white,fontStyle: FontStyle.italic),), 
                   ],
                 ),
-              )
-              
-            ],
-          ),
-          Column(
-            children: [
-              Container(
-                padding: const EdgeInsets.all(0),
-                decoration: const BoxDecoration(
-                  color: Color.fromARGB(255, 0, 46, 132),
-                  shape: BoxShape.circle,
-                ),
-                child: CircularPercentIndicator(
-                  radius: 60.0,
-                  lineWidth: 10.0,
-                  percent: 0.8,
-                  center: const Text("80%",style: TextStyle(color: Colors.white),),
-                  backgroundColor: Colors.black,
-                  progressColor: Colors.amber,
-                ),
               ),
-              const MetricBar(title: "Status", desc: "Healthy"),
+              backgroundColor: Colors.black,
+              progressColor: Colors.amber,
+            ),
 
-            ],
-          )
+          ),
           
           
         ],
