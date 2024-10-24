@@ -70,7 +70,7 @@ class _AppLayoutState extends State<AppLayout> {
         items: const [
           BottomNavigationBarItem(
             icon: Icon(Icons.monitor_heart_rounded),
-            label: 'Dashboard',
+            label: 'Vitals',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.medical_services_rounded),

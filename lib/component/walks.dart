@@ -53,12 +53,14 @@ class Walks extends StatelessWidget{
           Container(
             alignment: Alignment.centerLeft,
             margin: const EdgeInsets.only(left: 50),
-            child: Column(
+            child: Row(
               children: [
-                Text("${getStepsLeft()} Steps Left", style: const TextStyle(color: Colors.orange, fontSize: 12)),
+                Text("${getStepsLeft()}", style: const TextStyle(color: Colors.white, fontSize: 12,fontWeight: FontWeight.bold)),
+                const SizedBox(width: 5,),
+                const Text("Steps Left", style: const TextStyle(color: Colors.orange, fontSize: 12)),
                 Container(
                   width: MediaQuery.sizeOf(context).width/3,
-                  margin: const EdgeInsets.only(top: 5),
+                  margin: const EdgeInsets.only(top: 5,left: 5),
                   padding: const EdgeInsets.symmetric(vertical: 5),
                   decoration: const BoxDecoration(
                     color: Colors.amber,

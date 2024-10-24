@@ -37,6 +37,8 @@ dependencies:
   cupertino_icons: ^1.0.8
   percent_indicator: ^4.2.3
   smooth_page_indicator: ^1.2.0+3
+  numberpicker: ^2.1.2
+  syncfusion_flutter_gauges: ^27.1.55
 
 dev_dependencies:
   flutter_test:
