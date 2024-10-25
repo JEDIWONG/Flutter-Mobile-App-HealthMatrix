@@ -3,15 +3,46 @@ import 'package:health_matrix/component/logo.dart';
 import 'package:health_matrix/screen/home.dart';
 import 'package:health_matrix/screen/info.dart';
 import 'package:health_matrix/screen/profile.dart';
+import 'package:permission_handler/permission_handler.dart';
+
+
 
 class AppLayout extends StatefulWidget {
   const AppLayout({super.key});
+  
   @override
   State<AppLayout> createState() => _AppLayoutState();
 }
 
 class _AppLayoutState extends State<AppLayout> {
+
   int _selectedIndex = 0;
+
+  @override
+  void initState(){
+    super.initState();
+    initPlatformState();
+  }
+
+  Future<bool> _checkActivityRecognitionPermission() async {
+    bool granted = await Permission.activityRecognition.isGranted;
+
+    if (!granted) {
+      granted = await Permission.activityRecognition.request() ==
+          PermissionStatus.granted;
+    }
+
+    return granted;
+  }
+
+  Future<void> initPlatformState() async {
+    bool granted = await _checkActivityRecognitionPermission();
+    if (!granted) {
+      // Permission not granted; notify user
+    }
+
+    if (!mounted) return;
+  }
 
   static List<Widget> pageList = [
     const Home(),

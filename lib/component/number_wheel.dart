@@ -56,6 +56,7 @@ class _BpNumberWheelState extends State<BpNumberWheel> {
                       const SizedBox(width: 5,),
                       const Text("mmHg",style: TextStyle(color: Colors.lightGreenAccent,fontSize: 14),),
                     ],
+
                   ),              
                 ),
                 Container(
@@ -102,7 +103,7 @@ class _BpNumberWheelState extends State<BpNumberWheel> {
                         pointers: <GaugePointer>[NeedlePointer(value: _currentSys.toDouble())],
                         annotations: <GaugeAnnotation>[
                           GaugeAnnotation(widget: Container(child: 
-                            Text('Normal',style: const TextStyle(fontSize: 20,fontWeight: FontWeight.bold,color: Colors.green))),
+                            const Text('Normal',style: const TextStyle(fontSize: 20,fontWeight: FontWeight.bold,color: Colors.green))),
                             angle: 90, positionFactor: 0.5
                           )
                         ]

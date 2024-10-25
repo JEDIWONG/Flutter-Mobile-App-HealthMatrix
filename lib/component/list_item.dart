@@ -9,14 +9,15 @@ class ListItem extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     return Container(
+      margin: const EdgeInsets.only(bottom: 1),
       decoration: const BoxDecoration(
         color: Colors.white,
         boxShadow: [
           BoxShadow(
             blurRadius: 1,
             blurStyle: BlurStyle.normal,
-            color: Color.fromARGB(255, 38, 38, 38),
-            offset: Offset(0.5, 0.6),
+            color: Color.fromARGB(255, 227, 227, 227),
+            offset: Offset(1, 1),
           )
         ]
       ),
