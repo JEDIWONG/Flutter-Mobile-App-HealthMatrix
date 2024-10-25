@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:health_matrix/component/banner.dart';
 import 'package:health_matrix/component/edu_card.dart';
+import 'package:health_matrix/model/data.dart';
 import 'package:health_matrix/screen/guide.dart';
 import 'package:health_matrix/screen/learning.dart';
 
@@ -84,13 +85,18 @@ class Info extends StatelessWidget{
                         crossAxisSpacing: 10,
                       ),
 
-                      children: const [
-                        EduCard(title: "Learn Now", imgUrl: "assets/images/test_image.jpg",onPressed: Guide(),),
-                        EduCard(title: "Learn Now", imgUrl: "assets/images/test_image.jpg",onPressed: Guide(),),
-                        EduCard(title: "Learn Now", imgUrl: "assets/images/test_image.jpg",onPressed: Guide(),),
-                        EduCard(title: "Learn Now", imgUrl: "assets/images/test_image.jpg",onPressed: Guide(),),
-
-                      ],
+                      children: AppData.courseData.map((guide) {
+                          return EduCard(
+                            title: guide.title,
+                            imgUrl: guide.imgUrl,
+                            onPressed: Guide(
+                                title: guide.title,
+                                imgUrl: guide.imgUrl,
+                                totalSteps: guide.totalSteps,
+                                procedure: guide.procedure,
+                              ),
+                          );
+                        }).toList(),
                     ),
                   ),
                 ],

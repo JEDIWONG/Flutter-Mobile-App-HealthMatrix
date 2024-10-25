@@ -5,7 +5,7 @@ class EduCard extends StatelessWidget{
     super.key,
     required this.title,
     required this.imgUrl,
-    required this.onPressed,
+    required this.onPressed
   });
 
   final String title;

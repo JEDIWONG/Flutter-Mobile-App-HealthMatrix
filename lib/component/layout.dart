@@ -17,7 +17,7 @@ class _AppLayoutState extends State<AppLayout> {
     const Home(),
     const Home(),
     const Info(),
-    const Profile(),
+    const Profile(age: 12, gender: "Male", weight: 45, height: 170),
   ];
 
   void _switchPage(int index) {
