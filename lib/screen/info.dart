@@ -1,64 +1,62 @@
 import 'package:flutter/material.dart';
-import 'package:health_matrix/component/banner.dart';
 import 'package:health_matrix/component/edu_card.dart';
 import 'package:health_matrix/model/data.dart';
 import 'package:health_matrix/screen/guide.dart';
 import 'package:health_matrix/screen/learning.dart';
+import 'package:health_matrix/screen/meals_planning.dart';
 
-class Info extends StatelessWidget{
+class Info extends StatelessWidget {
   const Info({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black,
+      backgroundColor: Colors.white,
       body: SingleChildScrollView(
         child: Column(
           children: [
-            const PageBanner(imgUrl: "assets/images/info_page/bg.png", title: "Education"),
+            
             Container(
+              decoration: const BoxDecoration(
+                color: Colors.black, 
+                
+              ),
+              child: const ListTile(
+                leading: Icon(Icons.web_rounded,color: Colors.deepPurpleAccent,),
+                title: Text("Useful Features",style: TextStyle(fontSize: 24,fontWeight: FontWeight.bold,color: Colors.amber),),
+                subtitle: Text("Legend Said Prepare Umbrella Before Rain",style: TextStyle(color: Colors.white),),
+              ),
+            ),
+            
+            Container(
+              margin: const EdgeInsets.only(top: 10),
               width: MediaQuery.sizeOf(context).width,
               height: 500,
-              margin: const EdgeInsets.only(top: 10),
-              padding: const EdgeInsets.symmetric(vertical: 10,horizontal: 10),
-              decoration: const BoxDecoration(
-                borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
-                color: Colors.white,
-                boxShadow: [
-                  BoxShadow(
-                    blurRadius: 1,
-                    blurStyle: BlurStyle.normal,
-                    offset: Offset(1, -1),
-                    color: Color.fromARGB(255, 181, 181, 181),
-                  )
-                ]
-              ),
-              child: GridView(
-                physics: const NeverScrollableScrollPhysics(),
-                scrollDirection: Axis.vertical,
-                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 2,
-                  childAspectRatio: 1/1,
-                  mainAxisSpacing: 20,
-                  crossAxisSpacing: 10,
-                ),
-
-                children: const [
-                  EduCard(title: "Meals Planning", imgUrl: "assets/images/info_page/meal.png",onPressed: Learning(),),
-                  EduCard(title: "Exercise", imgUrl: "assets/images/info_page/exercise.png",onPressed: Learning(),),
-                  EduCard(title: "Knowledge", imgUrl: "assets/images/info_page/knowledge.png",onPressed: Learning(),),
-                  EduCard(title: "Data & Statistic", imgUrl: "assets/images/info_page/stats.png",onPressed: Learning(),),
-
+              padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+              color: Colors.white,
+              child: const Column(
+                children: [
+                  EduCard(
+                    title: "Meals Planning",
+                    imgUrl: "assets/images/info_page/meal.png",
+                    onPressed: MealsPlanning(),
+                  ),
+                  SizedBox(height: 20),
+                  EduCard(
+                    title: "Knowledge",
+                    imgUrl: "assets/images/info_page/knowledge.png",
+                    onPressed: Learning(),
+                  ),
                 ],
               ),
             ),
 
             Container(
-              alignment: Alignment.bottomCenter,
               padding: const EdgeInsets.all(20),
               decoration: const BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
+                color: Colors.black,
+                
+                
                 boxShadow: [
                   BoxShadow(
                     blurRadius: 1,
@@ -66,12 +64,19 @@ class Info extends StatelessWidget{
                     color: Colors.black,
                     offset: Offset(1, 1),
                   )
-                ]
+                ],
               ),
               child: Column(
                 children: [
-                  const Text("How To Use"),
                   
+                  const ListTile(
+                    leading: Icon(Icons.info_rounded,color: Colors.amber,),
+                    title: Text(
+                      "How To Use",
+                      style: TextStyle(fontWeight: FontWeight.bold, fontSize: 24,color: Colors.white,),
+                    ),
+                  ),
+                  const SizedBox(height: 20),
                   SizedBox(
                     width: MediaQuery.sizeOf(context).width,
                     height: 300,
@@ -97,16 +102,14 @@ class Info extends StatelessWidget{
                               ),
                           );
                         }).toList(),
-                    ),
-                  ),
+                    )
+                  )
                 ],
               ),
-            )
-          
+            ),
           ],
         ),
-      )
+      ),
     );
   }
-  
 }

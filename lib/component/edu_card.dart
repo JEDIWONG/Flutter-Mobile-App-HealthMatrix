@@ -17,6 +17,8 @@ class EduCard extends StatelessWidget{
     return InkWell(
       onTap: (){Navigator.push(context, MaterialPageRoute(builder: (context)=>onPressed));}, 
       child: Container(
+        height: 150,
+        margin: const EdgeInsets.symmetric(vertical: 10,horizontal: 5),
         decoration:  BoxDecoration(
           borderRadius: const BorderRadius.all(Radius.circular(10)),
           image: DecorationImage(
@@ -41,7 +43,6 @@ class EduCard extends StatelessWidget{
             child: Text(
               title,
               style:const TextStyle(fontSize: 18,fontWeight: FontWeight.bold,color: Colors.white,backgroundColor: Color.fromARGB(255, 218, 164, 0)),
-
             ),
         )
         ),

@@ -5,6 +5,7 @@ import 'package:health_matrix/component/health_monitor.dart';
 import 'package:health_matrix/component/heart_beat.dart';
 import 'package:health_matrix/component/hydration.dart';
 import 'package:health_matrix/component/walks.dart';
+import 'package:health_matrix/model/data.dart';
 
 
 class Home extends StatelessWidget{
@@ -13,17 +14,17 @@ class Home extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
   
-    return const Scaffold(
+    return Scaffold(
       
       body: SingleChildScrollView(
         child: Column(
           children: [
-            HealthMonitor(),
-            Exercise(currKcal: 150, goalKcal: 200, currTime: 12, goalTime: 24),
-            Walks(stepsNo: 3000,stepsGoals: 8000,),
-            Hydration(currMl: 1000,goalMl: 3700,),
-            Bp(sys: 101, dia: 59),
-            HeartBeat(bpm: 89),
+            const HealthMonitor(),
+            const Exercise(currKcal: 150, goalKcal: 200, currTime: 12, goalTime: 24),
+            Walks(stepsNo: AppData.userSteps.currentSteps,stepsGoals: AppData.userSteps.goalSteps,),
+            const Hydration(currMl: 1000,goalMl: 3700,),
+            const Bp(sys: 101, dia: 59),
+            const HeartBeat(bpm: 89),
           ],
         ),                                                  
       )
