@@ -43,7 +43,7 @@ class _StepsTakenState extends State<StepsTaken> {
     setState(() {
       _initialSteps = event.steps;
       _currentSteps = event.steps - _initialSteps;
-      _todaySteps += _currentSteps;
+      _todaySteps += 10;
       _steps = _todaySteps.toString();
       setGoalPercent();
     });

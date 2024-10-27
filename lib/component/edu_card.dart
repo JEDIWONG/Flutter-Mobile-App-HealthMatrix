@@ -21,6 +21,7 @@ class EduCard extends StatelessWidget{
         margin: const EdgeInsets.symmetric(vertical: 10,horizontal: 5),
         decoration:  BoxDecoration(
           borderRadius: const BorderRadius.all(Radius.circular(10)),
+          
           image: DecorationImage(
             image: AssetImage(imgUrl),
             fit: BoxFit.cover

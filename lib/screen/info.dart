@@ -31,7 +31,7 @@ class Info extends StatelessWidget {
             Container(
               margin: const EdgeInsets.only(top: 10),
               width: MediaQuery.sizeOf(context).width,
-              height: 500,
+              
               padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
               color: Colors.white,
               child: const Column(
@@ -55,7 +55,6 @@ class Info extends StatelessWidget {
               padding: const EdgeInsets.all(20),
               decoration: const BoxDecoration(
                 color: Colors.black,
-                
                 
                 boxShadow: [
                   BoxShadow(

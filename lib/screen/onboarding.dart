@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:health_matrix/component/custom_button.dart';
 import 'package:health_matrix/screen/auth.dart';
-import 'package:health_matrix/style/style.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class Onboarding extends StatefulWidget {
@@ -32,8 +31,8 @@ class _OnboardingState extends State<Onboarding> {
             children: [
               buildScreen(
                 
-                title: 'Welcome to App',
-                description: 'Discover the world with a healthy lifestyle',
+                title: 'Discover the world of healthy lifestyle',
+                description: '',
                 imgUrl: 'assets/images/onboarding_01.png',
               ),
               buildScreen(
@@ -85,7 +84,7 @@ class _OnboardingState extends State<Onboarding> {
               style: const TextStyle(
                 fontSize: 28,
                 fontWeight: FontWeight.bold,
-                color: Color.fromARGB(255, 255, 217, 0),
+                color: Colors.amberAccent,
                 shadows: [
                   Shadow(
                     blurRadius: 3,

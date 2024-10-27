@@ -6,7 +6,7 @@ class LearningTile extends StatelessWidget{
     super.key,
     required this.step,
     required this.title,
-    required this.imgUrl
+    required this.imgUrl,
   });
 
   final String step;
@@ -16,34 +16,51 @@ class LearningTile extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.only(top: 1),
+      margin: const EdgeInsets.symmetric(vertical: 10,horizontal: 5),
+      decoration:  BoxDecoration(
+        color: Colors.white,
+        boxShadow: const [
+          BoxShadow(
+            color: Color.fromARGB(255, 88, 88, 88),
+            blurRadius: 0.3,
+            blurStyle: BlurStyle.normal,
+            offset: Offset(1, 1),
+          )
+        ],
+        image: DecorationImage(image: AssetImage(imgUrl),fit: BoxFit.cover)
+      ),
       
       child: ListTile(
-
-        contentPadding: const EdgeInsets.fromLTRB(10, 0, 10, 20),
-        tileColor: Colors.black,
+        
+        contentPadding: const EdgeInsets.symmetric(vertical: 10,horizontal: 5),
+        tileColor: Colors.white,
         textColor: Colors.white,
-        iconColor: Colors.amber,
+        iconColor: Colors.deepPurpleAccent,
         leading: Container(
           width: 40,
           height: 40,
           decoration: const BoxDecoration(
             borderRadius: BorderRadius.all(Radius.circular(20)),
-            color: Colors.amber,
+            color: Colors.deepPurpleAccent,
           ),
           child: Align(
             alignment: Alignment.center,
-            child: Text(step),
+            child: Text(
+              step,
+              style: const TextStyle(
+                color: Colors.white,
+              ),
+            ),
           ),
         ),
-        title: SizedBox(
-          width: double.infinity,
-          height: 60,
-          child: Image.asset(imgUrl,fit: BoxFit.cover,),
-        ),
-        subtitle: Align(
-          alignment: Alignment.centerRight,
-          child:  Text(title),
+        title: Text(
+          title,
+          style: const TextStyle(
+            fontWeight: FontWeight.bold,
+            shadows: [ 
+              Shadow(color: Colors.black,offset: Offset(1, 1),blurRadius: 1)
+            ]
+          ),
         ),
         trailing: const Icon(Icons.navigate_next),
       ),

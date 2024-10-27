@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:health_matrix/component/layout.dart';
 
 class AltLogin extends StatelessWidget {
   const AltLogin({super.key, required this.padX, required this.padY});
@@ -34,7 +35,7 @@ class AltLogin extends StatelessWidget {
             title: "Sign in with Google",
             imgUrl: "assets/icons/google.png",
             onPressed: () {
-              // Handle Google sign-in logic here (optional)
+              Navigator.push(context, MaterialPageRoute(builder: (context)=>const AppLayout()));
               
             },
           ),

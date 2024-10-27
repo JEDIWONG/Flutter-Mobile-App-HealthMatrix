@@ -2,10 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:health_matrix/component/logo.dart';
 import 'package:health_matrix/screen/home.dart';
 import 'package:health_matrix/screen/info.dart';
+import 'package:health_matrix/screen/notfication.dart';
 import 'package:health_matrix/screen/profile.dart';
 import 'package:permission_handler/permission_handler.dart';
-
-
 
 class AppLayout extends StatefulWidget {
   const AppLayout({super.key});
@@ -46,9 +45,8 @@ class _AppLayoutState extends State<AppLayout> {
 
   static List<Widget> pageList = [
     const Home(),
-    const Home(),
     const Info(),
-    const Profile(age: 12, gender: "Male", weight: 45, height: 170),
+    const Profile(age: 22, gender: "Male", weight: 45, height: 170),
   ];
 
   void _switchPage(int index) {
@@ -64,29 +62,18 @@ class _AppLayoutState extends State<AppLayout> {
       appBar: AppBar(
         toolbarHeight: 80,
         elevation: 1,
-        leading: const Drawer(
-          child: Icon(Icons.menu),
-        ),
-        title: Align(
-            alignment: Alignment.centerLeft,
-            child: Padding(
-              padding: const EdgeInsets.symmetric(vertical: 30,horizontal: 50),
-              child: Logo(),
-            )
-        ),
+
+        leading: const Text(""),
+        
+        title: Logo(),
         actions: [
           IconButton(
-            icon: Icon(Icons.notifications),
+            icon: const Icon(Icons.notifications),
             onPressed: () {
-              // Add notification button functionality here
+              Navigator.push(context, MaterialPageRoute(builder: (context)=>const Notfication(noMsg: 1,)));
             },
           ),
-          IconButton(
-            icon: Icon(Icons.settings),
-            onPressed: () {
-              // Add settings button functionality here
-            },
-          ),
+          
         ],
         
       ),
@@ -95,7 +82,7 @@ class _AppLayoutState extends State<AppLayout> {
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _selectedIndex,
         onTap: _switchPage, 
-        selectedItemColor: Colors.amber,
+        selectedItemColor: Colors.deepPurpleAccent,
         unselectedItemColor: Colors.black,
       
         items: const [
@@ -103,13 +90,10 @@ class _AppLayoutState extends State<AppLayout> {
             icon: Icon(Icons.monitor_heart_rounded),
             label: 'Vitals',
           ),
+          
           BottomNavigationBarItem(
-            icon: Icon(Icons.medical_services_rounded),
-            label: 'Medical Centre',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.book_rounded),
-            label: "Information"
+            icon: Icon(Icons.free_breakfast_rounded),
+            label: "Features"
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.account_circle_rounded),
