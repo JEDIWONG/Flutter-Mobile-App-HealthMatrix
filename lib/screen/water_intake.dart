@@ -47,6 +47,16 @@ class _WaterIntakeState extends State<WaterIntake> {
     });
   }
 
+  String getSuggestion() {
+    if (goalPercent < 50) {
+      return "You are below 50% of your daily water goal. Keep drinking to stay hydrated!";
+    } else if (goalPercent < 100) {
+      return "You are on track! Just a bit more to meet your daily goal!";
+    } else {
+      return "Great job! You've reached your daily water intake goal!";
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     double progress = (_currentIntake / _goalIntake).clamp(0.0, 1.0); // Clamp to ensure progress is between 0 and 1
@@ -70,7 +80,7 @@ class _WaterIntakeState extends State<WaterIntake> {
                     lineWidth: 20.0,
                     percent: progress, // Set the progress dynamically
                     center:  Padding(
-                      padding: EdgeInsets.only(top: 30),
+                      padding: const EdgeInsets.only(top: 30),
                       child: Column(
                         children: [
                           const Icon(
@@ -103,7 +113,22 @@ class _WaterIntakeState extends State<WaterIntake> {
                           style: TextStyle(
                               fontWeight: FontWeight.bold, fontSize: 24),
                         )),
-                  )
+
+                  ),
+                  // New section for suggestions
+                  Container(
+                    margin: const EdgeInsets.only(top: 20),
+                    padding: const EdgeInsets.all(20),
+                    decoration: BoxDecoration(
+                      color: Colors.blue[900],
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    child: Text(
+                      getSuggestion(),
+                      textAlign: TextAlign.center,
+                      style: const TextStyle(color: Colors.white, fontSize: 16),
+                    ),
+                  ),
                 ],
               ),
             ),

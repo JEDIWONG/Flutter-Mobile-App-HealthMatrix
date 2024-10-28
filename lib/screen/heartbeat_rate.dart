@@ -9,13 +9,14 @@ class HeartbeatRate extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Heart Beat Rate"),
+        backgroundColor: Colors.black,
+        foregroundColor: Colors.pinkAccent,
+        title: const Text("Heart Beat Rate",style: TextStyle(color: Colors.pinkAccent),),
       ),
       body: const SingleChildScrollView(
         child: Column(
           children: [
             BpmPicker(),
-            
           ],
         ),
       ),
@@ -33,37 +34,26 @@ class BpmPicker extends StatefulWidget {
 class BpmPickerState extends State<BpmPicker> {
   int currBpm = 90;
 
-  String getStatus(){
-    String status;
+  String getStatus() {
+    if (currBpm < 60) return "Low";
+    if (currBpm <= 100) return "Normal";
+    return "High";
+  }
 
-    if(currBpm<60){
-      status = "Low";
+  String getSuggestion() {
+    if (currBpm < 60) {
+      return "Your heart rate is lower than average. Consider consulting a healthcare provider.";
+    } else if (currBpm <= 100) {
+      return "Your heart rate is in a normal range. Keep up with a healthy lifestyle!";
+    } else {
+      return "Your heart rate is elevated. It might be beneficial to relax and reduce stress.";
     }
-    if(currBpm>60&&currBpm<101){
-      status = "Normal";
-    }
-    else{
-      status="High";
-    }
-    return status;
   }
 
   @override
   Widget build(BuildContext context) {
-    String bpmStatus;
-    Color statusColor;
-
-    // Determine the status and color based on the current BPM
-    if (currBpm < 60) {
-      bpmStatus = "Low";
-      statusColor = Colors.blue;
-    } else if (currBpm >= 60 && currBpm <= 100) {
-      bpmStatus = "Normal";
-      statusColor = Colors.green;
-    } else {
-      bpmStatus = "High";
-      statusColor = Colors.red;
-    }
+    String bpmStatus = getStatus();
+    Color statusColor = (bpmStatus == "Low") ? Colors.blue : (bpmStatus == "Normal") ? Colors.green : Colors.red;
 
     return Column(
       children: [
@@ -161,24 +151,23 @@ class BpmPickerState extends State<BpmPicker> {
                 ),
               ),
               const SizedBox(height: 30),
-              
             ],
           ),
         ),
         Container(
-          margin: const EdgeInsets.symmetric(vertical: 30,horizontal: 10),
+          margin: const EdgeInsets.symmetric(vertical: 30, horizontal: 10),
           padding: const EdgeInsets.symmetric(vertical: 50),
           decoration: const BoxDecoration(
             color: Colors.black,
             borderRadius: BorderRadius.all(Radius.circular(20)),
           ),
-
           child: Column(
             children: [
-              ListTile(
-                leading: Text("Details",style: TextStyle(fontSize: 32,color: Colors.pinkAccent),),
+              const ListTile(
+                
+                title: Text("Range", style: TextStyle(color: Colors.amber,fontSize: 24,fontWeight: FontWeight.bold),),
               ),
-              SizedBox(height: 50,),
+              const SizedBox(height: 30),
               SfLinearGauge(
                 maximum: 200,
                 showTicks: false,
@@ -199,51 +188,58 @@ class BpmPickerState extends State<BpmPicker> {
                     position: LinearElementPosition.inside,
                   ),
                 ],
-
                 ranges: const [
                   LinearGaugeRange(
                     startValue: 30,
                     endValue: 60,
                     color: Colors.blue,
-                    startWidth: 0,
-                    endWidth: 20,
+                    startWidth: 10,
+                    endWidth: 10,
                   ),
                   LinearGaugeRange(
                     startValue: 60,
                     endValue: 100,
                     color: Colors.green,
-                    startWidth: 20,
-                    endWidth: 40,
+                    startWidth: 10,
+                    endWidth: 10,
                   ),
                   LinearGaugeRange(
                     startValue: 100,
                     endValue: 150,
                     color: Colors.red,
-                    startWidth: 40,
-                    endWidth: 60,
+                    startWidth: 10,
+                    endWidth: 10,
                   ),
                 ],
               ),
-
               Container(
                 margin: const EdgeInsets.only(top: 20),
-                padding: const EdgeInsets.symmetric(horizontal: 10,vertical: 5),
+                padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
                 decoration: const BoxDecoration(
                   color: Colors.amber,
                   borderRadius: BorderRadius.all(Radius.circular(10)),
                 ),
-                child: Text(getStatus(),style: const TextStyle(fontSize: 24,fontWeight: FontWeight.bold),),
+                child: Text(
+                  bpmStatus,
+                  style: const TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+                ),
               ),
-
               Container(
+                margin: const EdgeInsets.only(top: 30,left: 30,right: 30),
                 alignment: Alignment.centerLeft,
-                padding: EdgeInsets.symmetric(horizontal: 10),
-                child: Text("Everyting Is fine",style: TextStyle(color: Colors.amber),),
-              )
-              
+                padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 15),
+                decoration:  BoxDecoration(
+                  color: Colors.deepOrangeAccent.withOpacity(0.2),
+                  borderRadius: const BorderRadius.all(Radius.circular(20)),
+                ),
+                child: Text(
+                  getSuggestion(),
+                  style: const TextStyle(color: Colors.amber, fontSize: 14),
+                ),
+              ),
             ],
           ),
-        )
+        ),
       ],
     );
   }

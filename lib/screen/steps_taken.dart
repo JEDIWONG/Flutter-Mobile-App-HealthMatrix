@@ -51,7 +51,13 @@ class _StepsTakenState extends State<StepsTaken> {
 
   void setGoalPercent() {
     setState(() {
-      goalPercent = _todaySteps / _selectedGoal;
+      double temp = _todaySteps/_selectedGoal;
+      if(temp>=1){
+        goalPercent=1;
+      }
+      else{
+        goalPercent = temp;
+      }
     });
   }
 
@@ -59,9 +65,9 @@ class _StepsTakenState extends State<StepsTaken> {
     if (_selectedGoal <= 3000) {
       return "A good start! Aim to increase your steps for more health benefits.";
     } else if (_selectedGoal <= 6000) {
-      return "Great! You’re reaching a moderate level of physical activity.";
+      return "Great! You're reaching a moderate level of physical activity.";
     } else if (_selectedGoal <= 8000) {
-      return "Excellent! You’re hitting a high level of daily activity.";
+      return "Excellent! You're hitting a high level of daily activity.";
     } else {
       return "Incredible! Keep it up for maximum health benefits!";
     }
