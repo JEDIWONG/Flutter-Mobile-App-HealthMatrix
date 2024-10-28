@@ -20,9 +20,9 @@ class Home extends StatelessWidget{
         child: Column(
           children: [
             const HealthMonitor(),
-            const Exercise(currKcal: 150, goalKcal: 200, currTime: 12, goalTime: 24),
             Walks(stepsNo: AppData.userSteps.currentSteps,stepsGoals: AppData.userSteps.goalSteps,),
             const Hydration(currMl: 1000,goalMl: 3700,),
+            const Exercise(currKcal: 150, goalKcal: 200, currTime: 12, goalTime: 24),
             const Bp(sys: 101, dia: 59),
             const HeartBeat(bpm: 89),
           ],

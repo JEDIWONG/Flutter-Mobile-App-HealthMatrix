@@ -36,24 +36,27 @@ class Bp extends StatelessWidget{
               trailing: Icon(Icons.navigate_next_rounded,color: Color.fromARGB(255, 214, 250, 172),),
             ),
 
-            
+            Row(
+              children: [
+                
+                Container(
+                  margin: const EdgeInsets.only(left: 30),
+                  child:  Row(
+                    children: [
+                      Text("$sys",style: const TextStyle(fontSize: 32,fontWeight: FontWeight.bold,color: Color.fromARGB(255, 214, 250, 172))),
+                      const SizedBox(width: 5,),
+                      const Text("sys /",style: TextStyle(fontSize: 12,color: Colors.white,fontStyle: FontStyle.italic)), 
+                      const SizedBox(width: 5,),
+                      Text("$dia",style: const TextStyle(fontSize: 32,color: Color.fromARGB(255, 214, 250, 172),)),
+                      const SizedBox(width: 5,),
+                      const Text("dia",style: TextStyle(fontSize: 12,color: Colors.white,fontStyle: FontStyle.italic)), 
 
-            Container(
-              margin: const EdgeInsets.only(left: 30),
-              child:  Row(
-                children: [
-                  Text("$sys",style: const TextStyle(fontSize: 32,fontWeight: FontWeight.bold,color: Color.fromARGB(255, 214, 250, 172))),
-                  const SizedBox(width: 5,),
-                  const Text("sys /",style: TextStyle(fontSize: 12,color: Colors.white,fontStyle: FontStyle.italic)), 
-                  const SizedBox(width: 5,),
-                  Text("$dia",style: const TextStyle(fontSize: 32,color: Color.fromARGB(255, 214, 250, 172),)),
-                  const SizedBox(width: 5,),
-                  const Text("dia",style: TextStyle(fontSize: 12,color: Colors.white,fontStyle: FontStyle.italic)), 
-
-                ],
-              ),
+                    ],
+                  ),
+                ),
+              ],
             ),
-            
+
             Container(
               margin: const EdgeInsets.only(left: 50),
               child: Row(

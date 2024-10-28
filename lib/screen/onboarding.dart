@@ -20,7 +20,7 @@ class _OnboardingState extends State<Onboarding> {
       body: Stack(
         alignment: Alignment.bottomCenter,
         children: [
-          // PageView for swiping between screens
+          
           PageView(
             controller: _controller,
             onPageChanged: (index) {
@@ -44,7 +44,7 @@ class _OnboardingState extends State<Onboarding> {
               lastScreen()
             ],
           ),
-          // Page Indicator at the bottom
+          
           Positioned(
             bottom: 30,
             child: SmoothPageIndicator(
@@ -63,7 +63,7 @@ class _OnboardingState extends State<Onboarding> {
     );
   }
 
-  // Helper function to build each onboarding page
+ 
   Widget buildScreen({required String title, required String description, required String imgUrl}) {
     return Container(
         decoration: BoxDecoration(
@@ -77,7 +77,7 @@ class _OnboardingState extends State<Onboarding> {
         padding: const EdgeInsets.all(30.0),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: [ // You need to provide the image assets
+          children: [
             const SizedBox(height: 40),
             Text(
               title,

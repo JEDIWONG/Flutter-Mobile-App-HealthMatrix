@@ -12,7 +12,7 @@ class Exercise extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: (){print("1");},
+      onTap: (){},
       child: Container(
         margin: const EdgeInsets.symmetric(vertical: 30,horizontal: 10),
         padding: const EdgeInsets.symmetric(vertical: 30),
@@ -33,7 +33,7 @@ class Exercise extends StatelessWidget{
             
             const ListTile(
               title:Text("Exercise",style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold,fontSize: 24),),
-              trailing: Icon(Icons.navigate_next_rounded,color: Colors.white,),
+              
             ),
             Container(
               margin: const EdgeInsets.only(left: 30),

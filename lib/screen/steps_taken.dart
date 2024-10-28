@@ -49,18 +49,22 @@ class _StepsTakenState extends State<StepsTaken> {
     });
   }
 
-  void setGoalPercent(){
+  void setGoalPercent() {
     setState(() {
       goalPercent = _todaySteps / _selectedGoal;
     });
   }
 
-  void _updateGoalSteps(int newGoal) {
-    setState(() {
-      _selectedGoal = newGoal;
-      AppData.userSteps.goalSteps = newGoal;  // Update goal steps in AppData
-      setGoalPercent(); // Recalculate goal percentage
-    });
+  String getWalkingRangeMessage() {
+    if (_selectedGoal <= 3000) {
+      return "A good start! Aim to increase your steps for more health benefits.";
+    } else if (_selectedGoal <= 6000) {
+      return "Great! You’re reaching a moderate level of physical activity.";
+    } else if (_selectedGoal <= 8000) {
+      return "Excellent! You’re hitting a high level of daily activity.";
+    } else {
+      return "Incredible! Keep it up for maximum health benefits!";
+    }
   }
 
   @override
@@ -72,6 +76,7 @@ class _StepsTakenState extends State<StepsTaken> {
           children: [
             Container(
               width: MediaQuery.sizeOf(context).width,
+              height: MediaQuery.sizeOf(context).height,
               padding: const EdgeInsets.symmetric(vertical: 30, horizontal: 10),
               decoration: const BoxDecoration(
                 color: Colors.black,
@@ -94,12 +99,19 @@ class _StepsTakenState extends State<StepsTaken> {
                           ),
                           Text(
                             "${(goalPercent * 100).toInt()} %",
-                            style: const TextStyle(color: Colors.white, fontSize: 24, fontWeight: FontWeight.bold),
+                            style: const TextStyle(
+                              color: Colors.white,
+                              fontSize: 24,
+                              fontWeight: FontWeight.bold,
+                            ),
                           ),
                         ],
                       ),
                     ),
-                    footer: const Text("Daily Steps Taken", style: TextStyle(color: Colors.amber, fontWeight: FontWeight.bold)),
+                    footer: const Text(
+                      "Daily Steps Taken",
+                      style: TextStyle(color: Colors.amber, fontWeight: FontWeight.bold),
+                    ),
                     backgroundColor: const Color.fromARGB(255, 52, 52, 52),
                     progressColor: Colors.deepOrange,
                   ),
@@ -107,7 +119,10 @@ class _StepsTakenState extends State<StepsTaken> {
                     margin: const EdgeInsets.symmetric(vertical: 30, horizontal: 10),
                     child: Row(
                       children: [
-                        const Text("Step Today", style: TextStyle(color: Colors.amber, fontSize: 18, fontWeight: FontWeight.bold)),
+                        const Text(
+                          "Step Today",
+                          style: TextStyle(color: Colors.amber, fontSize: 18, fontWeight: FontWeight.bold),
+                        ),
                         Container(
                           padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 10),
                           margin: const EdgeInsets.only(left: 10),
@@ -116,47 +131,66 @@ class _StepsTakenState extends State<StepsTaken> {
                             color: Colors.deepOrangeAccent,
                             borderRadius: BorderRadius.all(Radius.circular(10)),
                           ),
-                          child: Text(_steps, style: const TextStyle(color: Colors.black, fontWeight: FontWeight.bold, fontSize: 24)),
+                          child: Text(
+                            _steps,
+                            style: const TextStyle(
+                              color: Colors.black,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 24,
+                            ),
+                          ),
                         ),
                       ],
                     ),
                   ),
                   Container(
-                    margin: EdgeInsets.symmetric(horizontal: 10),
-                    child: Row(
+                    margin: const EdgeInsets.symmetric(horizontal: 10),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        const Text("Goals", style: TextStyle(color: Colors.amber, fontSize: 18, fontWeight: FontWeight.bold)),
-                        SizedBox(width: 50,),
-                        DropdownButton<int>(
-                          value: _selectedGoal,
-                          menuWidth: 100,
-                          menuMaxHeight: 300,
-                          
-                          iconEnabledColor: Colors.deepOrange,
-                          style: const TextStyle(color: Colors.white),
-                          items: const [
-                            DropdownMenuItem(value: 1000, child: Text("1000")),
-                            DropdownMenuItem(value: 2000, child: Text("2000")),
-                            DropdownMenuItem(value: 3000, child: Text("3000")),
-                            DropdownMenuItem(value: 4000, child: Text("4000")),
-                            DropdownMenuItem(value: 5000, child: Text("5000")),
-                            DropdownMenuItem(value: 6000, child: Text("6000")),
-                            DropdownMenuItem(value: 7000, child: Text("7000")),
-                            DropdownMenuItem(value: 8000, child: Text("8000")),
-                          ],
+                        const Text(
+                          "Set Goal",
+                          style: TextStyle(color: Colors.amber, fontSize: 18, fontWeight: FontWeight.bold),
+                        ),
+                        Slider(
+                          value: _selectedGoal.toDouble(),
+                          min: 1000,
+                          max: 8000,
+                          divisions: 7,
+                          label: _selectedGoal.toString(),
                           onChanged: (value) {
                             setState(() {
-                              _selectedGoal = value!;
-                              _updateGoalSteps(_selectedGoal);
+                              _selectedGoal = value.toInt();
+                              setGoalPercent();
                             });
                           },
-                          dropdownColor: Colors.deepOrange,
-                          
+                          activeColor: Colors.deepOrange,
+                          inactiveColor: Colors.grey,
+                        ),
+                        Text(
+                          'Goal: $_selectedGoal steps',
+                          style: const TextStyle(color: Colors.white, fontSize: 16),
                         ),
                       ],
                     ),
-                  )
-                  
+                  ),
+                  Container(
+                    margin: const EdgeInsets.symmetric(vertical: 20, horizontal: 10),
+                    padding: const EdgeInsets.all(16),
+                    decoration: BoxDecoration(
+                      color: Colors.deepOrangeAccent.withOpacity(0.2),
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    child: Text(
+                      getWalkingRangeMessage(),
+                      style: const TextStyle(
+                        color: Colors.white,
+                        fontSize: 16,
+                        fontWeight: FontWeight.w500,
+                      ),
+                      textAlign: TextAlign.center,
+                    ),
+                  ),
                 ],
               ),
             ),

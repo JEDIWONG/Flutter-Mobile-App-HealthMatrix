@@ -7,7 +7,7 @@ class HealthMonitor extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.symmetric(vertical: 30),
+      padding: const EdgeInsets.symmetric(vertical: 15),
       decoration: const BoxDecoration(
         color: Color.fromARGB(255, 26, 26, 26),
         boxShadow: [
@@ -27,31 +27,78 @@ class HealthMonitor extends StatelessWidget{
             title:Text("Status",style: TextStyle(color: Colors.lightGreen,fontWeight: FontWeight.bold,fontSize: 24),),
           ),
           Container(
-            margin: const EdgeInsets.only(left: 30),
-            child:  CircularPercentIndicator(
-              startAngle: 220,
-              radius: 60.0,
-              lineWidth: 5.0,
-              percent: 0.8,
-              center:Container(
-                margin: const EdgeInsets.only(top: 30),
-                child:  const Column(
+            alignment: Alignment.center,
+            child:  Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Column(
                   children: [
-                    Text("80 %",style:  TextStyle(color: Colors.amber,fontSize: 22),),
-                    Text("Overall",style: TextStyle(color: Colors.white,fontStyle: FontStyle.italic),), 
+                    CircularPercentIndicator(
+                      startAngle: 220,
+                      radius: 40.0,
+                      lineWidth: 10.0,
+                      percent: 1/8,
+                      center: const Icon(Icons.directions_walk,color: Color.fromARGB(255, 255, 145, 0),),
+                      backgroundColor: const Color.fromARGB(255, 52, 52, 52),
+                      progressColor: const Color.fromARGB(255, 255, 145, 0),
+                    ),
+                    const SizedBox(height: 10,),
+                    CircularPercentIndicator(
+                      startAngle: 220,
+                      radius: 40.0,
+                      lineWidth: 10.0,
+                      percent: 1000/3700, // Set the progress dynamically
+                      center:  const Icon(
+                              Icons.water_drop_rounded,
+                              color: Colors.blue,
+                            ),
+                      backgroundColor: const Color.fromARGB(255, 52, 52, 52),
+                      progressColor: Colors.blue,
+                    ),
                   ],
                 ),
-              ),
-              backgroundColor: Colors.black,
-              progressColor: Colors.amber,
-            ),
+                const SizedBox(width: 20,),
+                CircularPercentIndicator(
+                  startAngle: 220,
+                  radius: 60.0,
+                  lineWidth: 10.0,
+                  percent: 0.6,
+                  center:const Text("60 %",style:  TextStyle(color: Colors.white,fontSize: 22,fontWeight: FontWeight.bold),),
+                  backgroundColor: Colors.black,
+                  progressColor: Colors.lightGreenAccent,
+                  footer: Container(
+                    margin: const EdgeInsets.symmetric(vertical: 10),
+                    padding: const EdgeInsets.all(10),
+                    decoration: const BoxDecoration(
+                      borderRadius: BorderRadius.all(Radius.circular(10)), 
+                      color: Colors.amber,
+                    ),
+                    child: const Text("Overall",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 14),)
+                  ), 
+                ),
+                const SizedBox(width: 20,),
+                Column(
+                  children: [
 
+                    CircularPercentIndicator(
+                      startAngle: 220,
+                      radius: 40.0,
+                      lineWidth: 10.0,
+                      percent: 1000/3700, // Set the progress dynamically
+                      center:  const Icon(
+                              Icons.bolt_rounded,
+                              color: Colors.yellow,
+                            ),
+                      backgroundColor: const Color.fromARGB(255, 52, 52, 52),
+                      progressColor: Colors.yellow,
+                    ),
+                  ],
+                )
+              ],
+            )
           ),
-          
-          
         ],
       ),
     );
   }
-  
 }
