@@ -16,14 +16,6 @@ class _FirstTimeSetupState extends State<FirstTimeSetup> {
   // List of questions and answers
   final List<Map<String, Object>> _questions = [
     {
-      'question': 'What Is Your Gender?',
-      'answers': ['Male', 'Female', 'Prefer To Not Say'],
-    },
-    {
-      'question': 'What Is Your Age?',
-      'answers': ['Below 12', '12 - 18', '19-30', "31-50", '51-70', "Above 70"],
-    },
-    {
       'question': 'Did You Suffer In Any of These NCDs?',
       'answers': ["High Blood Pressure", "Heart Issues", "None"],
     },

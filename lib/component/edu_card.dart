@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class EduCard extends StatelessWidget{
-  const EduCard({
+  const  EduCard({
     super.key,
     required this.title,
     required this.imgUrl,
@@ -43,7 +43,20 @@ class EduCard extends StatelessWidget{
             
             child: Text(
               title,
-              style:const TextStyle(fontSize: 18,fontWeight: FontWeight.bold,color: Colors.white,backgroundColor: Color.fromARGB(255, 218, 164, 0)),
+              style:const TextStyle(
+                fontSize: 18,
+                fontWeight: FontWeight.bold,
+                color: Colors.amber,
+                
+                shadows: [
+                  Shadow(
+                    color: Colors.black,
+                    offset: Offset(1, 1),
+                    blurRadius: 1,
+                  
+                  )
+                ]
+              ),
             ),
         )
         ),

@@ -15,16 +15,16 @@ class Home extends StatelessWidget{
   Widget build(BuildContext context) {
   
     return Scaffold(
-      
+      backgroundColor: Colors.white, 
       body: SingleChildScrollView(
         child: Column(
           children: [
             const HealthMonitor(),
             Walks(stepsNo: AppData.userSteps.currentSteps,stepsGoals: AppData.userSteps.goalSteps,),
-            const Hydration(currMl: 1000,goalMl: 3700,),
+            Hydration(currMl: AppData.userWater.currentMl,goalMl: AppData.userWater.goalMl,),
             const Exercise(currKcal: 150, goalKcal: 200, currTime: 12, goalTime: 24),
             const Bp(sys: 101, dia: 59),
-            const HeartBeat(bpm: 89),
+            const HeartBeat(bpm: 60),
           ],
         ),                                                  
       )

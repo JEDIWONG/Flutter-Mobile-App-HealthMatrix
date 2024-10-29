@@ -8,7 +8,7 @@ class StepsTaken extends StatefulWidget {
   const StepsTaken({super.key});
 
   @override
-  _StepsTakenState createState() => _StepsTakenState();
+  State <StepsTaken> createState() => _StepsTakenState();
 }
 
 class _StepsTakenState extends State<StepsTaken> {
@@ -76,7 +76,11 @@ class _StepsTakenState extends State<StepsTaken> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text("Steps Taken")),
+      appBar: AppBar(
+        title: const Text("Steps Taken",
+        style: TextStyle(fontWeight: FontWeight.bold),),
+        backgroundColor: Colors.black,foregroundColor: Colors.deepOrangeAccent,
+      ),
       body: SingleChildScrollView(
         child: Column(
           children: [

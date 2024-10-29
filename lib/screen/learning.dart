@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:health_matrix/component/banner.dart';
 import 'package:health_matrix/component/learning_tile.dart';
 import 'package:health_matrix/component/text_tittle.dart';
 
@@ -16,7 +15,7 @@ class Learning extends StatelessWidget{
           decoration: const BoxDecoration(
             
             image: DecorationImage(
-              image: AssetImage("assets/images/info_page/knowledge.png"),
+              image: AssetImage("assets/images/learning/bg.png"),
               alignment: Alignment.topCenter,
             )
           ),
@@ -31,10 +30,10 @@ class Learning extends StatelessWidget{
             child:  const Column(
               children: [
                 TextTittleLeft(title: "Learning Modules", desc: "Knowledges starts here"),
-                LearningTile(step: "1", title: "Introduction To NCDs", imgUrl: "assets/images/onboarding_last.jpg",),
-                LearningTile(step: "2", title: "Diabetes", imgUrl: "assets/images/onboarding_last.jpg",),
-                LearningTile(step: "3", title: "Hypertension", imgUrl: "assets/images/onboarding_last.jpg",),
-                LearningTile(step: "4", title: "Heart Disease", imgUrl: "assets/images/onboarding_last.jpg",),
+                LearningTile(step: "1", title: "Introduction To NCDs", imgUrl: "assets/images/learning/learn_01.png",),
+                LearningTile(step: "2", title: "Diabetes", imgUrl: "assets/images/learning/learn_02.png",),
+                LearningTile(step: "3", title: "Hypertension", imgUrl: "assets/images/learning/learn_03.png",),
+                LearningTile(step: "4", title: "Heart Disease", imgUrl: "assets/images/learning/learn_04.png",),
               ],
             ),
           )

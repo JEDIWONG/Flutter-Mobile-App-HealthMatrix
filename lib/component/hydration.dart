@@ -8,7 +8,6 @@ class Hydration extends StatelessWidget{
   final int currMl; 
   final int goalMl;
 
-
   int getWaterLeft(){
     int waterLeft = goalMl - currMl;
 

@@ -23,6 +23,7 @@ class Guide extends StatelessWidget {
         child: Column(
           children: [
             PageBanner(imgUrl: imgUrl, title: title),
+            
             GuideSteps(procedure: procedure),
           ],
         ),
@@ -46,7 +47,7 @@ class GuideStepsState extends State<GuideSteps> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.symmetric(vertical: 30,horizontal: 10),
+      padding: const EdgeInsets.symmetric(vertical: 30,horizontal: 10),
       child: Stepper(
         currentStep: index,
         onStepContinue: () {
@@ -95,8 +96,12 @@ class GuideStepsState extends State<GuideSteps> {
               ElevatedButton(
                 onPressed: controls.onStepContinue,
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: const Color.fromARGB(255, 174, 0, 254),
+                  backgroundColor: Colors.deepPurpleAccent,
                   foregroundColor: Colors.white,
+                  shape: const RoundedRectangleBorder(
+                    borderRadius: BorderRadius.all(Radius.circular(0)),
+                  )
+
                 ),
                 child: const Text('Next'),
               ),
@@ -105,8 +110,11 @@ class GuideStepsState extends State<GuideSteps> {
                 ElevatedButton(
                   onPressed: controls.onStepCancel,
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: const Color.fromARGB(255, 255, 255, 255),
-                    foregroundColor: Colors.purple,
+                    backgroundColor: Colors.white,
+                    foregroundColor: Colors.deepPurpleAccent,
+                    shape: const RoundedRectangleBorder(
+                      borderRadius: BorderRadius.all(Radius.circular(0)),
+                    )
                   ),
                   child: const Text('Back'),
                 ),

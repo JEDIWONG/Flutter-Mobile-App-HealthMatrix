@@ -44,7 +44,7 @@ class Info extends StatelessWidget {
                   SizedBox(height: 20),
                   EduCard(
                     title: "Knowledge",
-                    imgUrl: "assets/images/info_page/knowledge.png",
+                    imgUrl: "assets/images/learning/bg.png",
                     onPressed: Learning(),
                   ),
                 ],

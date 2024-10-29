@@ -1,11 +1,57 @@
 import 'package:flutter/material.dart';
 import 'package:health_matrix/component/layout.dart';
 
-class AltLogin extends StatelessWidget {
-  const AltLogin({super.key, required this.padX, required this.padY});
+class AltRegis extends StatelessWidget {
+  const AltRegis({super.key, required this.padX, required this.padY, required this.onPressed,});
 
   final double padX;
   final double padY;
+  final Function onPressed;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: EdgeInsets.symmetric(horizontal: padX, vertical: padY),
+      child: Column(
+        children: [
+          // Divider with better color contrast
+          const Padding(
+            padding: EdgeInsets.only(top: 30),
+            child: Divider(height: 1, thickness: 2, color: Colors.grey),
+          ),
+          // Instructional text
+          const Padding(
+            padding: EdgeInsets.symmetric(vertical: 20),
+            child: Text(
+              "Or",
+              style: TextStyle(
+                fontSize: 14,
+                fontWeight: FontWeight.w500,
+                color: Colors.black,
+              ),
+            ),
+          ),
+          // Google sign-in button
+          AltLoginButton(
+            title: "Sign Up with Google",
+            imgUrl: "assets/icons/google.png",
+            onPressed: () {
+              onPressed;
+            },
+          ),
+          const SizedBox(height: 10),
+        ],
+      ),
+    );
+  }
+}
+
+class AltLogin extends StatelessWidget {
+  const AltLogin({super.key, required this.padX, required this.padY,});
+
+  final double padX;
+  final double padY;
+  
 
   @override
   Widget build(BuildContext context) {

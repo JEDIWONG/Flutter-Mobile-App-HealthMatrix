@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:health_matrix/component/alt_login.dart';
+import 'package:health_matrix/component/alt_auth.dart';
 import 'package:health_matrix/component/custom_button.dart';
 import 'package:health_matrix/component/layout.dart';
 import 'package:health_matrix/component/text_tittle.dart';
@@ -78,7 +78,7 @@ class Login extends StatelessWidget {
                       ),
                       
                       // Alternate Login (Google, etc.)
-                      const AltLogin(padX: 0, padY: 0),
+                      AltLogin(padX: 0, padY: 0,),
                     ],
                   ),
                 ),

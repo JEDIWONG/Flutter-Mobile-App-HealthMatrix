@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:health_matrix/component/banner.dart';
 import 'package:health_matrix/component/custom_button.dart';
 import 'package:health_matrix/component/text_tittle.dart';
 import 'package:health_matrix/screen/login.dart';

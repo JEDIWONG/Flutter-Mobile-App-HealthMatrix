@@ -13,7 +13,7 @@ class StepsBar extends StatelessWidget {
           return Container(
             margin: const EdgeInsets.symmetric(horizontal: 5.0),
             decoration: BoxDecoration(
-              color: i == int.parse(index) ? const Color.fromARGB(255, 253, 194, 0):Colors.green , // Dynamic color based on index
+              color: i == int.parse(index) ? Colors.deepPurpleAccent:Colors.green , // Dynamic color based on index
               shape: BoxShape.circle,
             ),
             padding: const EdgeInsets.all(20),

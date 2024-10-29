@@ -63,8 +63,12 @@ class _WaterIntakeState extends State<WaterIntake> {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Water Intake"),
+        title: const Text("Water Intake Log",
+        style: TextStyle(fontWeight: FontWeight.bold),),
+        backgroundColor: Colors.black,
+        foregroundColor: Colors.blue,
       ),
+
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -267,16 +271,19 @@ class _WaterIntakeState extends State<WaterIntake> {
               children: [
                 const Text(
                   "Daily Water Goals",
-                  style: TextStyle(color: Colors.blue),
+                  style: TextStyle(color: Colors.blue,fontWeight: FontWeight.bold),
                 ),
                 Container(
                   margin: const EdgeInsets.only(left: 10),
                   padding:
                       const EdgeInsets.symmetric(horizontal: 50, vertical: 10),
-                  decoration: const BoxDecoration(color: Colors.blue),
+                  decoration: const BoxDecoration(
+                    color: Colors.blue,
+                    borderRadius: BorderRadius.all(Radius.circular(20))
+                  ),
                   child: Text(
                     "$_goalIntake ml", // Display the calculated goal intake
-                    style: const TextStyle(color: Colors.white),
+                    style: const TextStyle(color: Colors.white,fontWeight: FontWeight.bold),
                   ),
                 )
               ],

@@ -14,8 +14,8 @@ class HealthMonitor extends StatelessWidget{
           BoxShadow(
             blurRadius: 3,
             blurStyle: BlurStyle.normal,
-            color: Colors.amber,
-            offset: Offset(1, 3),
+            color: Colors.black,
+            offset: Offset(1, 1),
           )
         ]
       ),
@@ -66,15 +66,7 @@ class HealthMonitor extends StatelessWidget{
                   center:const Text("60 %",style:  TextStyle(color: Colors.white,fontSize: 22,fontWeight: FontWeight.bold),),
                   backgroundColor: Colors.black,
                   progressColor: Colors.lightGreenAccent,
-                  footer: Container(
-                    margin: const EdgeInsets.symmetric(vertical: 10),
-                    padding: const EdgeInsets.all(10),
-                    decoration: const BoxDecoration(
-                      borderRadius: BorderRadius.all(Radius.circular(10)), 
-                      color: Colors.amber,
-                    ),
-                    child: const Text("Overall",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 14),)
-                  ), 
+                  
                 ),
                 const SizedBox(width: 20,),
                 Column(

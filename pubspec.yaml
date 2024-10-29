@@ -81,6 +81,19 @@ flutter:
     - assets/images/onboarding_02.png
     - assets/images/dashboard/monitor.png
     - assets/images/dashboard/bg.png
+    - assets/images/learning/bg.png
+    - assets/images/learning/learn_01.png
+    - assets/images/learning/learn_02.png
+    - assets/images/learning/learn_03.png
+    - assets/images/learning/learn_04.png
+    - assets/images/learning/how_01/bg.png
+    - assets/images/learning/how_01/s1.png
+    - assets/images/learning/how_01/s2.png
+    - assets/images/learning/how_01/s3.png
+    - assets/images/learning/how_02/bg.png
+    - assets/images/learning/how_02/s1.png
+    - assets/images/learning/how_02/s2.png
+    - assets/images/learning/how_02/s3.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images

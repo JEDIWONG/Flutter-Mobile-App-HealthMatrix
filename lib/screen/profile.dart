@@ -9,6 +9,14 @@ class Profile extends StatelessWidget{
   final String gender;
   final double weight;
   final double height;
+  
+  double getBmi(){
+
+    double bmi = (weight/((height/100)*(height/100))).toDouble();
+
+    return bmi;
+  }
+
 
   @override
   Widget build(BuildContext context) {
@@ -37,7 +45,7 @@ class Profile extends StatelessWidget{
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   ListTile(
-                    leading: Text("Biometrics",style: TextStyle(fontSize: 24),),
+                    leading: const Text("Biometrics",style: TextStyle(fontSize: 24),),
                     trailing: IconButton(
                           onPressed: (){},
                           style: IconButton.styleFrom(
@@ -48,7 +56,7 @@ class Profile extends StatelessWidget{
                         ),
                   ),
                   
-                  SizedBox(height: 10,),
+                  const SizedBox(height: 10,),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
@@ -63,7 +71,7 @@ class Profile extends StatelessWidget{
                       SizedBox(
                         width: 150,
                         height: 100,
-                        child: IdCard(icon: Icons.male, title: "Gender", value: age.toString()),
+                        child: IdCard(icon: Icons.male, title: "Gender", value: gender),
                       ),
                       
                     ],
@@ -72,15 +80,16 @@ class Profile extends StatelessWidget{
                   IdCard(icon: Icons.monitor_weight, title: "Weight (KG)", value: weight.toString()),
                   const SizedBox(height: 10,),
                   IdCard(icon: Icons.height_rounded, title: "Height (CM)", value: height.toString()),
-                  
+                  const SizedBox(height: 10,),
+                  IdCard(icon: Icons.balance_rounded, title: "BMI", value: getBmi().toStringAsFixed(1))
                   
                 ],
               ),
             ),
             
             Container(
-              margin: EdgeInsets.symmetric(vertical: 30),
-              child: Column(
+              margin: const EdgeInsets.symmetric(vertical: 30),
+              child: const Column(
                 children: [
                   ListItem(title: "Account", icon: Icons.account_circle_rounded),
                   ListItem(title: "Help", icon: Icons.live_help_rounded),
@@ -92,17 +101,22 @@ class Profile extends StatelessWidget{
             ),
             
 
-            OutlinedButton(
-              onPressed: (){Navigator.push(context, MaterialPageRoute(builder: (context)=>const Auth()));},
-              style: OutlinedButton.styleFrom(
-                backgroundColor: Colors.white,
-                foregroundColor: Colors.red,
-                fixedSize: Size(MediaQuery.sizeOf(context).width-100, 50),
-                side: const BorderSide(
-                  color: Colors.red,
-                )
+            
+            Container(
+              margin: const EdgeInsets.symmetric(vertical: 30),
+              child: OutlinedButton(
+                onPressed: (){Navigator.push(context, MaterialPageRoute(builder: (context)=>const Auth()));},
+                style: OutlinedButton.styleFrom(
+                  backgroundColor: Colors.white,
+                  foregroundColor: Colors.red,
+                  fixedSize: Size(MediaQuery.sizeOf(context).width-100, 50),
+                  side: const BorderSide(
+                    color: Colors.red,
+                  )
+                ),
+                child: const Text("Log Out")
               ),
-              child: const Text("Log Out"))
+            )
           ],
         ),
       )

@@ -8,8 +8,12 @@ class BloodPressure extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text("Blood Pressure")),
-      body: const SingleChildScrollView(
+        appBar: AppBar(
+          title: const Text("Blood Pressure",
+          style: TextStyle(fontWeight: FontWeight.bold),),
+          backgroundColor: Colors.black,
+          foregroundColor: Colors.lightGreenAccent,
+        ),      body: const SingleChildScrollView(
         child: Column(
           children: [
             BpNumberWheel(),
