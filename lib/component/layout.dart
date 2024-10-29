@@ -65,7 +65,7 @@ class _AppLayoutState extends State<AppLayout> {
 
         leading: const Text(""),
         
-        title: Logo(),
+        title: const Logo(),
         actions: [
           IconButton(
             icon: const Icon(Icons.notifications),

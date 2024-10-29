@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 
 class Logo extends StatelessWidget{
+  const Logo({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.only(left: 60),
+      margin: const EdgeInsets.only(left: 60),
       width: 100,
       height: 80,
       decoration: const BoxDecoration(

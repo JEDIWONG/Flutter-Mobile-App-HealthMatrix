@@ -13,7 +13,7 @@ class SimpleStepIndicator extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
+
     return Center(
       child: SizedBox(
         width: width,

@@ -4,5 +4,6 @@ class Guide {
   String title;
   String imgUrl; 
   int totalSteps;
-  var procedure;
+  
+  List <Map<String,String>> procedure;
 }

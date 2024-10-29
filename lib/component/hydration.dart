@@ -92,7 +92,7 @@ class Hydration extends StatelessWidget{
                   ],
                 )
             ],),
-            SizedBox(height: 20,),
+            const SizedBox(height: 20,),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [

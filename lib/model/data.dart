@@ -1,6 +1,7 @@
 import 'package:health_matrix/model/guide.dart';
 import 'package:health_matrix/model/user_steps.dart';
 import 'package:health_matrix/model/user_water.dart';
+import 'package:health_matrix/model/chapter.dart';
 
 
 class AppData {
@@ -52,5 +53,65 @@ class AppData {
         },
       ],
     ),
+  ];
+
+  static List<Chapter> chapterData = [
+    Chapter(
+      index: '1',
+      title: "Introduction To NCDs",
+      imgUrl: "assets/images/learning/learn_01.png",
+      content: [
+        "Non-communicable diseases (NCDs) are not passed from person to person.",
+        "Common NCDs include heart disease, cancer, diabetes, and chronic respiratory diseases.",
+        "NCDs are responsible for 71% of all global deaths annually.",
+        "Unhealthy lifestyles, such as poor diet, physical inactivity, and smoking, increase NCD risk.",
+        "NCDs often develop over time and are mainly preventable through lifestyle changes.",
+        "Low- and middle-income countries bear the highest burden of NCDs."
+      ], 
+    ),
+
+    Chapter(
+      index: '2',
+      title: "Diabetes",
+      imgUrl: "assets/images/learning/learn_02.png",
+      content: [
+        "Diabetes is a chronic condition that affects the way the body processes blood sugar.",
+        "There are three main types of diabetes: Type 1, Type 2, and gestational diabetes.",
+        "Type 2 diabetes is the most common form, often associated with obesity and lifestyle.",
+        "Diabetes can lead to serious health issues like heart disease, kidney failure, and vision loss.",
+        "Managing diabetes involves diet, exercise, medication, and regular monitoring of blood sugar levels.",
+        "Around 1 in 10 adults worldwide suffer from diabetes, and rates are increasing."
+      ],
+    ),
+
+    Chapter(
+      index: '3',
+      title: "Hypertension",
+      imgUrl: "assets/images/learning/learn_03.png",
+      content: [
+        "Hypertension, or high blood pressure, is a condition where blood pressure in the arteries is elevated.",
+        "Often called a 'silent killer,' it can lead to heart disease, stroke, and kidney damage.",
+        "Risk factors for hypertension include obesity, high salt intake, and physical inactivity.",
+        "Regular monitoring and lifestyle changes are essential for managing high blood pressure.",
+        "Hypertension affects more than a billion people globally.",
+        "Medication, reduced salt intake, and exercise can help control blood pressure levels."
+      ],
+    ),
+
+    Chapter(
+      index: '4',
+      title: "Heart Disease",
+      imgUrl: "assets/images/learning/learn_04.png",
+      content: [
+        "Heart disease is a broad term for various heart-related conditions, including coronary artery disease.",
+        "It is the leading cause of death worldwide, responsible for millions of deaths each year.",
+        "Risk factors include smoking, high cholesterol, diabetes, and sedentary lifestyle.",
+        "Symptoms can include chest pain, shortness of breath, and fatigue, but some cases are asymptomatic.",
+        "Preventing heart disease involves a healthy diet, regular exercise, and not smoking.",
+        "Regular check-ups and managing risk factors are crucial for heart health."
+      ],
+    ),
+
+
   ];
 }
