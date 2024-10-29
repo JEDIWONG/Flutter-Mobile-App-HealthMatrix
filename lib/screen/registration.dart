@@ -41,10 +41,7 @@ class _RegistrationState extends State<Registration> {
       'stepTitle': 'Height & Weight',
       'inputFields': 'Height & Weight',
     },
-    {
-      'stepTitle': 'Complete Registration',
-      'inputFields': 'Submit Form',
-    },
+    
   ];
 
   void _nextStep() {
@@ -263,11 +260,11 @@ class _RegistrationState extends State<Registration> {
     return ElevatedButton(
       onPressed: _nextStep,
       style: ElevatedButton.styleFrom(
-        backgroundColor: _currentStepIndex < _steps.length - 2 ? Colors.purple : Colors.green,
+        backgroundColor: _currentStepIndex < _steps.length - 1 ? Colors.purple : Colors.green,
         foregroundColor: Colors.white,
         fixedSize: Size(MediaQuery.sizeOf(context).width, 50),
       ),
-      child: Text(_currentStepIndex < _steps.length - 2 ? "Next" : "Submit"),
+      child: Text(_currentStepIndex < _steps.length - 1 ? "Next" : "Submit"),
     );
   }
 

@@ -4,7 +4,7 @@ class MealsPlanning extends StatefulWidget {
   const MealsPlanning({super.key});
 
   @override
-  _MealsPlanningState createState() => _MealsPlanningState();
+  State <MealsPlanning> createState() => _MealsPlanningState();
 }
 
 class _MealsPlanningState extends State<MealsPlanning> {
@@ -63,7 +63,7 @@ class _MealsPlanningState extends State<MealsPlanning> {
               itemBuilder: (context, mealIndex) {
                 var meal = meals[index]![mealIndex];
                 return Container(
-                  margin: EdgeInsets.only(top: 1),
+                  margin: const EdgeInsets.only(top: 1),
                   child: ListTile(
                     tileColor: Colors.deepPurpleAccent,
                     
@@ -122,10 +122,10 @@ class _MealsPlanningState extends State<MealsPlanning> {
 class AddMealSheet extends StatefulWidget {
   final Function(Map<String, dynamic>) onMealAdded;
 
-  const AddMealSheet({required this.onMealAdded, Key? key}) : super(key: key);
+  const AddMealSheet({required this.onMealAdded, super.key});
 
   @override
-  _AddMealSheetState createState() => _AddMealSheetState();
+  State <AddMealSheet> createState() => _AddMealSheetState();
 }
 
 class _AddMealSheetState extends State<AddMealSheet> {

@@ -141,7 +141,7 @@ class QuizWidget extends StatelessWidget {
                 child: Text(answer),
               ),
             );
-          }).toList(),
+          }),
           TextButton(
             onPressed: answerQuestion,
             child: const Text(

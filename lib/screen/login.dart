@@ -78,7 +78,7 @@ class Login extends StatelessWidget {
                       ),
                       
                       // Alternate Login (Google, etc.)
-                      AltLogin(padX: 0, padY: 0,),
+                      const AltLogin(padX: 0, padY: 0,),
                     ],
                   ),
                 ),
