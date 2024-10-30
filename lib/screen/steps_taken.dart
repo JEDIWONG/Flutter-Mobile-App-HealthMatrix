@@ -79,7 +79,11 @@ class _StepsTakenState extends State<StepsTaken> {
       appBar: AppBar(
         title: const Text("Steps Taken",
         style: TextStyle(fontWeight: FontWeight.bold),),
-        backgroundColor: Colors.black,foregroundColor: Colors.deepOrangeAccent,
+        backgroundColor: Colors.black,
+        foregroundColor: Colors.deepOrangeAccent,
+        actions: const [
+          Icon(Icons.bar_chart_rounded),
+        ],
       ),
       body: SingleChildScrollView(
         child: Column(

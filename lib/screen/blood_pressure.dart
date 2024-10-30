@@ -9,10 +9,14 @@ class BloodPressure extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
+          
           title: const Text("Blood Pressure",
           style: TextStyle(fontWeight: FontWeight.bold),),
           backgroundColor: Colors.black,
           foregroundColor: Colors.lightGreenAccent,
+          actions: const [
+            Icon(Icons.bar_chart_rounded),
+          ],
         ),      body: const SingleChildScrollView(
         child: Column(
           children: [

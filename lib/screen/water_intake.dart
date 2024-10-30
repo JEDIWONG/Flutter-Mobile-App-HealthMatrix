@@ -67,6 +67,9 @@ class _WaterIntakeState extends State<WaterIntake> {
         style: TextStyle(fontWeight: FontWeight.bold),),
         backgroundColor: Colors.black,
         foregroundColor: Colors.blue,
+        actions: const [
+          Icon(Icons.bar_chart_rounded),
+        ],
       ),
 
       body: SingleChildScrollView(

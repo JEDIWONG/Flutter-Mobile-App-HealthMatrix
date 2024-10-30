@@ -12,6 +12,9 @@ class HeartbeatRate extends StatelessWidget {
         backgroundColor: Colors.black,
         foregroundColor: Colors.pinkAccent,
         title: const Text("Heart Beat Rate",style: TextStyle(color: Colors.pinkAccent),),
+        actions: const [
+          Icon(Icons.bar_chart_rounded),
+        ],
       ),
       body: const SingleChildScrollView(
         child: Column(
